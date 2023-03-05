@@ -1,3 +1,3 @@
 # Brick Breakers
 
-A Breakout style game made using Godot for CS545.
+A Breakout style game made using Godot.
