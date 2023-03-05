@@ -1,0 +1,249 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://addons/github-integration/fonts/Roboto-Black.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://backgrounds/image_1080x1920.png" type="Texture" id=2]
+[ext_resource path="res://icons/large.png" type="Texture" id=3]
+[ext_resource path="res://icons/medium.png" type="Texture" id=4]
+[ext_resource path="res://icons/small.png" type="Texture" id=5]
+[ext_resource path="res://icons/slow.png" type="Texture" id=6]
+[ext_resource path="res://icons/fast.png" type="Texture" id=8]
+[ext_resource path="res://scenes/Settings.gd" type="Script" id=9]
+[ext_resource path="res://icons/exit-icon-23.png" type="Texture" id=10]
+[ext_resource path="res://icons/slow_pressed.png" type="Texture" id=13]
+[ext_resource path="res://icons/medium_pressed.png" type="Texture" id=14]
+[ext_resource path="res://icons/fast_pressed.png" type="Texture" id=15]
+[ext_resource path="res://icons/large_pressed.png" type="Texture" id=16]
+[ext_resource path="res://icons/small_pressed.png" type="Texture" id=17]
+[ext_resource path="res://icons/ticker.png" type="Texture" id=18]
+
+[sub_resource type="DynamicFont" id=3]
+size = 135
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 75
+font_data = ExtResource( 1 )
+
+[sub_resource type="ButtonGroup" id=4]
+
+[sub_resource type="ButtonGroup" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 75
+font_data = ExtResource( 1 )
+
+[sub_resource type="ButtonGroup" id=7]
+
+[node name="SettingScreen" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 1080.0
+margin_bottom = 1920.0
+texture = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="SoundEffectsSlider" type="HSlider" parent="."]
+margin_left = 51.0
+margin_top = 384.0
+margin_right = 984.0
+margin_bottom = 520.0
+custom_icons/grabber_disabled = ExtResource( 18 )
+custom_icons/grabber_highlight = ExtResource( 18 )
+custom_icons/grabber = ExtResource( 18 )
+min_value = -60.0
+max_value = 0.0
+step = 5.0
+tick_count = 2
+ticks_on_borders = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 2.0
+margin_top = 14.0
+margin_right = 1075.0
+margin_bottom = 175.0
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center][color=black]Settings[/color][/center]"
+text = "Settings"
+
+[node name="Sound Effects Volume Label" type="RichTextLabel" parent="."]
+margin_left = 48.0
+margin_top = 260.0
+margin_right = 1121.0
+margin_bottom = 352.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=black]Sound Effects Volume[/color]"
+text = "Sound Effects Volume"
+
+[node name="Music Volume Label" type="RichTextLabel" parent="."]
+margin_left = 53.0
+margin_top = 512.0
+margin_right = 1126.0
+margin_bottom = 615.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=black]Music Volume"
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="."]
+margin_left = 43.0
+margin_top = 650.0
+margin_right = 976.0
+margin_bottom = 786.0
+custom_icons/grabber_disabled = ExtResource( 18 )
+custom_icons/grabber_highlight = ExtResource( 18 )
+custom_icons/grabber = ExtResource( 18 )
+min_value = -60.0
+max_value = 0.0
+step = 5.0
+tick_count = 2
+ticks_on_borders = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FastButton" type="TextureButton" parent="."]
+margin_left = 740.0
+margin_top = 918.0
+margin_right = 1083.0
+margin_bottom = 1036.0
+toggle_mode = true
+group = SubResource( 4 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 15 )
+
+[node name="BallMediumButton" type="TextureButton" parent="."]
+margin_left = 363.0
+margin_top = 920.0
+margin_right = 745.0
+margin_bottom = 1031.0
+toggle_mode = true
+group = SubResource( 4 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 14 )
+
+[node name="SlowButton" type="TextureButton" parent="."]
+margin_left = 11.0
+margin_top = 923.0
+margin_right = 346.0
+margin_bottom = 1032.0
+toggle_mode = true
+group = SubResource( 4 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 13 )
+
+[node name="LargeButton" type="TextureButton" parent="."]
+margin_left = 740.0
+margin_top = 1197.0
+margin_right = 1083.0
+margin_bottom = 1315.0
+toggle_mode = true
+group = SubResource( 5 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 16 )
+
+[node name="PaddleMediumButton" type="TextureButton" parent="."]
+margin_left = 362.0
+margin_top = 1200.0
+margin_right = 752.0
+margin_bottom = 1319.0
+toggle_mode = true
+group = SubResource( 5 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 14 )
+
+[node name="SmallButton" type="TextureButton" parent="."]
+margin_left = 19.0
+margin_top = 1200.0
+margin_right = 354.0
+margin_bottom = 1309.0
+toggle_mode = true
+group = SubResource( 5 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 17 )
+
+[node name="Ball Speed Label" type="RichTextLabel" parent="."]
+margin_left = 48.0
+margin_top = 755.0
+margin_right = 1121.0
+margin_bottom = 891.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=black]Ball Speed"
+text = "Ball Speed"
+
+[node name="Paddle Size Label" type="RichTextLabel" parent="."]
+margin_left = 42.0
+margin_top = 1054.0
+margin_right = 1115.0
+margin_bottom = 1190.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=black]Paddle Size"
+text = "Paddle Size"
+
+[node name="ExitButton" type="TextureButton" parent="."]
+margin_left = 932.0
+margin_top = 40.0
+margin_right = 1252.0
+margin_bottom = 347.0
+rect_scale = Vector2( 0.35, 0.35 )
+texture_normal = ExtResource( 10 )
+
+[node name="Paddle Speed Label" type="RichTextLabel" parent="."]
+margin_left = 42.0
+margin_top = 1361.0
+margin_right = 539.0
+margin_bottom = 1470.0
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[color=black]Paddle Speed"
+text = "Paddle Speed"
+
+[node name="SlowPaddleSpeedButton" type="TextureButton" parent="."]
+margin_left = 19.0
+margin_top = 1487.0
+margin_right = 354.0
+margin_bottom = 1596.0
+toggle_mode = true
+group = SubResource( 7 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 13 )
+
+[node name="MediumPaddleSpeedButton" type="TextureButton" parent="."]
+margin_left = 362.0
+margin_top = 1484.0
+margin_right = 744.0
+margin_bottom = 1595.0
+toggle_mode = true
+group = SubResource( 7 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 14 )
+
+[node name="FastPaddleSpeedButton" type="TextureButton" parent="."]
+margin_left = 740.0
+margin_top = 1477.0
+margin_right = 1083.0
+margin_bottom = 1595.0
+toggle_mode = true
+group = SubResource( 7 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 15 )
+
+[connection signal="drag_ended" from="SoundEffectsSlider" to="." method="_on_SoundEffectsSlider_drag_ended"]
+[connection signal="drag_ended" from="MusicSlider" to="." method="_on_MusicSlider_drag_ended"]
+[connection signal="toggled" from="FastButton" to="." method="_on_FastButton_toggled"]
+[connection signal="toggled" from="BallMediumButton" to="." method="_on_BallMediumButton_toggled"]
+[connection signal="toggled" from="SlowButton" to="." method="_on_SlowButton_toggled"]
+[connection signal="toggled" from="LargeButton" to="." method="_on_LargeButton_toggled"]
+[connection signal="toggled" from="PaddleMediumButton" to="." method="_on_PaddleMediumButton_toggled"]
+[connection signal="toggled" from="SmallButton" to="." method="_on_SmallButton_toggled"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="toggled" from="SlowPaddleSpeedButton" to="." method="_on_SlowPaddleSpeedButton_toggled"]
+[connection signal="toggled" from="MediumPaddleSpeedButton" to="." method="_on_MediumPaddleSpeedButton_toggled"]
+[connection signal="toggled" from="FastPaddleSpeedButton" to="." method="_on_FastPaddleSpeedButton_toggled"]
